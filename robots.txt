@@ -1,0 +1,31 @@
+# LexRadar v2.0 · robots.txt
+# Search engine crawling instructions
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /assets/
+Allow: /data/
+
+Disallow: /worker/
+Disallow: /*.json$ (except data/users.json for public access if needed)
+Disallow: /docs/
+
+# Crawl delay (requests per second)
+Crawl-delay: 1
+
+# Request rate (requests per minute) - for Google
+Request-rate: 30/1m
+
+# Sitemap location
+Sitemap: https://lexradar.es/sitemap.xml
+
+# Bot-specific rules
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /

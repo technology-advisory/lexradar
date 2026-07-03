@@ -1,0 +1,23 @@
+{
+  "version": 4,
+  "format": "hashed-local-users",
+  "algorithm": "SHA-256",
+  "users": [
+    {
+      "email": "macarriazo@gmail.com",
+      "emailHash": "524d6748539626c7cb7a452c8d2e5ac7bb6c9b56cdd8a653756e0a64b5eb9b8c",
+      "passwordHash": "ba0dd4292d9aeed57d4c953323370ca550abcc3b217a5a2f782c95d16f53a780",
+      "displayName": "Miguel Ángel",
+      "weeklyLimit": null,
+      "role": "admin"
+    },
+    {
+      "email": "jlpintergomez@yahoo.es",
+      "emailHash": "6c350b8a93fb858055fb8bae4ca4e1fbf3742460663413c0f0ccd0446e6a957f",
+      "passwordHash": "255f60ff496fc72bf91f5c8d0c576e17ec497e21d6966f04913045c4a407c923",
+      "displayName": "José Luis",
+      "weeklyLimit": 5,
+      "role": "beta"
+    }
+  ]
+}

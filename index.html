@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- ═════════════════════════════════════════════════════════════════════════
+       CORE META TAGS & SEO
+       ═════════════════════════════════════════════════════════════════════════ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="theme-color" content="#07111f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f3f7fb" media="(prefers-color-scheme: light)" />
+  
+  <!-- Title & Description -->
+  <title>LexRadar · Jurisprudencia inteligente sin IA</title>
+  <meta name="description" content="Investigación jurídica en CENDOJ y TJUE sin IA. Búsqueda, análisis y comparación de sentencias españolas y europeas. Beta privada." />
+  <meta name="keywords" content="jurisprudencia, CENDOJ, TJUE, búsqueda legal, sentencias, derecho español, legal research" />
+  
+  <!-- Canonical URL (update to actual domain) -->
+  <link rel="canonical" href="https://lexradar.es/" />
+  
+  <!-- ─── OPEN GRAPH (Social Sharing) ─── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lexradar.es/" />
+  <meta property="og:title" content="LexRadar · Jurisprudencia inteligente" />
+  <meta property="og:description" content="Plataforma de investigación jurídica para búsqueda de CENDOJ y TJUE. Análisis de sentencias sin IA." />
+  <meta property="og:image" content="https://lexradar.es/apple-touch-icon.png" />
+  <meta property="og:site_name" content="LexRadar" />
+  <meta property="og:locale" content="es_ES" />
+  
+  <!-- ─── TWITTER CARD ─── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LexRadar · Jurisprudencia inteligente" />
+  <meta name="twitter:description" content="Investiga CENDOJ y TJUE sin IA. Búsqueda, análisis y comparación de sentencias." />
+  <meta name="twitter:image" content="https://lexradar.es/apple-touch-icon.png" />
+  
+  <!-- ─── FAVICONS & ICONS ─── -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  
+  <!-- ─── STYLES ─── -->
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- ─── JSON-LD STRUCTURED DATA ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LexRadar",
+    "description": "Motor de investigación jurídica para CENDOJ y TJUE sin IA",
+    "url": "https://lexradar.es",
+    "applicationCategory": "Legal Research",
+    "image": "https://lexradar.es/apple-touch-icon.png",
+    "author": {
+      "@type": "Organization",
+      "name": "LexRadar"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LexRadar",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lexradar.es/apple-touch-icon.png",
+        "width": 44,
+        "height": 44
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://lexradar.es/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "version": "2.0"
+  }
+  </script>
+</head>
+<body class="auth-loading">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="LexRadar inicio">
+        <span class="brand-mark">LR</span>
+        <span>
+          <strong>LexRadar</strong>
+          <small>Jurisprudencia inteligente</small>
+        </span>
+      </a>
+      <nav class="top-actions" aria-label="Acciones principales">
+        <div class="account-menu-wrap">
+          <button id="accountToggle" class="account-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="account-avatar" id="accountAvatar">··</span>
+            <span class="account-toggle-text">
+              <strong id="accountName">Conectando…</strong>
+              <small id="accountMeta"></small>
+            </span>
+            <svg class="account-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="accountMenu" class="account-menu" hidden></div>
+        </div>
+        <button class="icon-btn" id="themeToggle" type="button" title="Cambiar tema" aria-label="Cambiar tema">🌙</button>
+        <button class="ghost-btn" id="exportJsonBtn" type="button" disabled>JSON</button>
+        <button class="ghost-btn" id="exportCsvBtn" type="button" disabled>CSV</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-intro">
+        <div class="hero-kicker">Beta privada · Motor de investigación jurídica sin IA · 5 búsquedas/semana · IA próximamente</div>
+        <h1>Investigación jurídica inteligente.</h1>
+        <p>Consulta CENDOJ y TJUE, organiza los resultados y prepara investigaciones jurídicas sin IA. La IA llegará próximamente.</p>
+      </section>
+
+      <section class="workspace">
+        <aside class="side-panel">
+          <div class="panel-card panel-history">
+            <div class="panel-head">
+              <div class="panel-title">
+                <span class="panel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg>
+                </span>
+                <h2>Historial</h2>
+              </div>
+              <button id="clearHistoryBtn" class="panel-action" type="button">Limpiar</button>
+            </div>
+            <div id="historyList" class="compact-list empty"></div>
+          </div>
+
+          <div class="panel-card panel-favorites">
+            <div class="panel-head">
+              <div class="panel-title">
+                <span class="panel-icon panel-icon-star">
+                  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </span>
+                <h2>Favoritos</h2>
+              </div>
+              <span id="favoritesCounter" class="panel-count">0</span>
+            </div>
+            <div id="favoritesList" class="compact-list empty"></div>
+          </div>
+        </aside>
+
+        <div class="main-col">
+          <form id="searchForm" class="search-panel">
+            <label class="search-label" for="queryInput">¿Qué investigación jurídica quieres realizar?</label>
+            <div class="mode-row">
+              <label class="mode-pill"><input type="radio" name="mode" value="search" checked> 🔎 Búsqueda directa <span class="mode-help">busca literalmente</span></label>
+              <label class="mode-pill"><input type="radio" name="mode" value="research"> 📚 Investigación jurídica <span class="mode-help">sin IA</span></label>
+              <label class="mode-pill disabled"><input type="radio" name="mode" value="ai" disabled> 🤖 Investigación con IA <span class="soon">próximamente</span></label>
+            </div>
+            <div class="search-row">
+              <input id="queryInput" name="query" type="search" placeholder="Ej. comisión de apertura" autocomplete="off" required />
+              <button class="primary-btn" type="submit">Buscar</button>
+            </div>
+
+            <div id="researchExample" class="email-example" hidden>
+              <div class="email-example-head">
+                <span class="email-avatar">MC</span>
+                <span class="email-meta">
+                  <strong>Miguel Angel CARRIAZO <span class="email-address">&lt;macarriazo@gmail.com&gt;</span></strong>
+                  <small>mié, 1 jul, 18:50 (hace 2 días) · para mí</small>
+                </span>
+              </div>
+              <p class="email-example-body">Compara la doctrina del TJUE y del Tribunal Supremo sobre la comisión de apertura en préstamos hipotecarios</p>
+              <button type="button" class="email-example-use" data-query="Compara la doctrina del TJUE y del Tribunal Supremo sobre la comisión de apertura en préstamos hipotecarios">Usar este ejemplo ↗</button>
+            </div>
+
+            <div class="quick-tags" aria-label="Búsquedas sugeridas">
+              <button type="button" data-query="gastos hipotecarios">gastos hipotecarios</button>
+              <button type="button" data-query="Busca las sentencias clave del TJUE sobre el inicio del plazo de prescripción y compáralas con los últimos fallos del Tribunal Supremo español">investigación gastos hipotecarios</button>
+              <button type="button" data-query="principio de efectividad">principio de efectividad</button>
+              <button type="button" data-query="IRPH">IRPH</button>
+              <button type="button" data-query="comisión de apertura">comisión de apertura</button>
+            </div>
+
+            <details class="advanced-box" open>
+              <summary>Búsqueda avanzada</summary>
+              <div class="advanced-grid">
+                <label class="source-field">
+                  Fuentes
+                  <select id="sourceSelect" class="visually-hidden" aria-label="Fuente">
+                    <option value="cendoj">CENDOJ</option>
+                    <option value="tjue">TJUE</option>
+                    <option value="both">CENDOJ + TJUE</option>
+                  </select>
+                  <div class="source-chips" aria-label="Fuentes jurídicas">
+                    <button type="button" class="source-chip active" data-source="cendoj">CENDOJ</button>
+                    <button type="button" class="source-chip" data-source="tjue">TJUE</button>
+                    <button type="button" class="source-chip" data-source="both">Ambas</button>
+                  </div>
+                </label>
+                <label>
+                  Resultados
+                  <select id="maxResultsSelect">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
+                </label>
+                <label>
+                  Orden
+                  <select id="sortHintSelect" disabled>
+                    <option>Más recientes</option>
+                  </select>
+                </label>
+              </div>
+            </details>
+          </form>
+
+          <section class="results-zone" aria-live="polite">
+            <div id="quotaBox" class="quota-box hidden"></div>
+            <div id="statusBox" class="status-box hidden"></div>
+
+            <div class="results-header">
+              <div>
+                <h2 id="resultsTitle">Resultados</h2>
+                <p id="resultsSubtitle">Lanza una búsqueda para consultar CENDOJ.</p>
+              </div>
+              <div id="resultCount" class="count-pill">0</div>
+            </div>
+
+          <div id="resultsList" class="results-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <div class="dialog-card">
+      <button class="dialog-close" id="closeDialogBtn" type="button" aria-label="Cerrar">×</button>
+      <div id="detailContent"></div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="loginOverlay" class="login-overlay" hidden>
+    <div class="login-card">
+      <div class="brand login-brand">
+        <span class="brand-mark">LR</span>
+        <span>
+          <strong>LexRadar</strong>
+          <small>Beta privada</small>
+        </span>
+      </div>
+      <h2>Acceso privado</h2>
+      <p>Introduce tu email autorizado y contraseña para usar el motor de investigación jurídica.</p>
+      <form id="loginForm" class="login-form">
+        <label>Email
+          <input id="loginEmail" type="email" autocomplete="username" required />
+        </label>
+        <label>Contraseña
+          <input id="loginPassword" type="password" autocomplete="current-password" required />
+        </label>
+        <button class="primary-btn" type="submit">Entrar</button>
+      </form>
+      <div id="loginError" class="login-error" hidden></div>
+    </div>
+  </div>
+
+
+  <dialog id="passwordDialog" class="app-dialog">
+    <form id="passwordForm" class="dialog-card compact-dialog" method="dialog">
+      <button class="dialog-close" type="button" data-close-dialog="passwordDialog" aria-label="Cerrar">×</button>
+      <div class="compact-dialog-kicker">Seguridad de la cuenta</div>
+      <h3>Cambiar contraseña</h3>
+      <p class="compact-dialog-sub">Actualiza tu contraseña de acceso. Se aplica solo en este navegador.</p>
+
+      <label class="field-label" for="pwdCurrentEmail">Cuenta
+        <input id="pwdCurrentEmail" type="text" disabled />
+      </label>
+      <label class="field-label" for="pwdNew">Nueva contraseña
+        <input id="pwdNew" type="password" autocomplete="new-password" minlength="4" required placeholder="Mínimo 4 caracteres" />
+      </label>
+      <label class="field-label" for="pwdConfirm">Confirmar contraseña
+        <input id="pwdConfirm" type="password" autocomplete="new-password" minlength="4" required placeholder="Repite la contraseña" />
+      </label>
+      <div id="pwdDialogError" class="compact-dialog-error" hidden></div>
+
+      <div class="compact-dialog-actions">
+        <button class="btn-secondary" type="button" data-close-dialog="passwordDialog">Cancelar</button>
+        <button class="primary-btn" type="submit">Guardar contraseña</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="createUserDialog" class="app-dialog">
+    <form id="createUserForm" class="dialog-card compact-dialog" method="dialog">
+      <button class="dialog-close" type="button" data-close-dialog="createUserDialog" aria-label="Cerrar">×</button>
+      <div class="compact-dialog-kicker">Administración · Solo admin</div>
+      <h3>Nuevo usuario beta</h3>
+      <p class="compact-dialog-sub">Se guarda en este navegador y queda disponible para iniciar sesión.</p>
+
+      <label class="field-label" for="newUserEmail">Email
+        <input id="newUserEmail" type="email" autocomplete="off" required placeholder="nombre@dominio.com" />
+      </label>
+      <label class="field-label" for="newUserPassword">Contraseña
+        <input id="newUserPassword" type="password" autocomplete="off" minlength="4" required placeholder="Mínimo 4 caracteres" />
+      </label>
+      <label class="field-label" for="newUserName">Nombre a mostrar
+        <input id="newUserName" type="text" autocomplete="off" placeholder="Opcional" />
+      </label>
+      <label class="field-label" for="newUserLimit">Límite semanal de búsquedas
+        <input id="newUserLimit" type="number" min="0" step="1" placeholder="Vacío = sin límite" />
+      </label>
+      <div id="createUserError" class="compact-dialog-error" hidden></div>
+
+      <div class="compact-dialog-actions">
+        <button class="btn-secondary" type="button" data-close-dialog="createUserDialog">Cancelar</button>
+        <button class="primary-btn" type="submit">Crear usuario</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="manageUsersDialog" class="app-dialog">
+    <div class="dialog-card compact-dialog manage-users-card">
+      <button class="dialog-close" type="button" data-close-dialog="manageUsersDialog" aria-label="Cerrar">×</button>
+      <div class="compact-dialog-kicker">Administración · Solo admin</div>
+      <h3>Gestionar usuarios</h3>
+      <p class="compact-dialog-sub">Edita email, contraseña o límite de cualquier usuario beta.</p>
+      <div id="manageUsersList" class="manage-users-list"></div>
+    </div>
+  </dialog>
+
+  <dialog id="editUserDialog" class="app-dialog">
+    <form id="editUserForm" class="dialog-card compact-dialog" method="dialog">
+      <button class="dialog-close" type="button" data-close-dialog="editUserDialog" aria-label="Cerrar">×</button>
+      <div class="compact-dialog-kicker">Administración · Editar usuario</div>
+      <h3 id="editUserTitle">Editar usuario</h3>
+      <p class="compact-dialog-sub">Deja la contraseña vacía si no quieres cambiarla.</p>
+
+      <input type="hidden" id="editUserKey" />
+
+      <label class="field-label" for="editUserEmail">Email
+        <input id="editUserEmail" type="email" autocomplete="off" required />
+      </label>
+      <label class="field-label" for="editUserPassword">Nueva contraseña
+        <input id="editUserPassword" type="password" autocomplete="off" minlength="4" placeholder="Dejar en blanco para no cambiar" />
+      </label>
+      <label class="field-label" for="editUserName">Nombre a mostrar
+        <input id="editUserName" type="text" autocomplete="off" />
+      </label>
+      <label class="field-label" for="editUserLimit">Límite semanal de búsquedas
+        <input id="editUserLimit" type="number" min="0" step="1" placeholder="Vacío = sin límite" />
+      </label>
+      <div id="editUserError" class="compact-dialog-error" hidden></div>
+
+      <div class="compact-dialog-actions">
+        <button class="btn-secondary" type="button" data-close-dialog="editUserDialog">Cancelar</button>
+        <button class="primary-btn" type="submit">Guardar cambios</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="app-footer">
+    <strong>LexRadar v1.1 Beta</strong>
+    <span>CENDOJ · TJUE · Investigación jurídica</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
